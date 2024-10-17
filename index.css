@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(204, 43%, 93%);
+  padding: 0 1em 0 1em;
+  font-family: "Karla";
+}
+p {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.grid-ctn {
+  display: grid;
+  grid-template-areas:
+    "box1"
+    "box2"
+    "box3";
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 1.2em 2em 1.2em;
+  gap: 1.5em;
+}
+
+.box1 {
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  grid-area: box1;
+  background-color: white;
+  .paragraph-subtitle {
+    color: hsl(71, 73%, 54%);
+    font-weight: 700;
+    line-height: normal;
+  }
+  h3 {
+    color: hsl(179, 62%, 43%);
+    font-weight: 700;
+  }
+  p {
+    color: hsl(218, 22%, 67%);
+    line-height: 1.8em;
+  }
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-area: box2;
+  background-color: hsl(179, 62%, 43%);
+  color: white;
+
+  .price {
+    font-size: 2em;
+    margin-right: 0.5em;
+  }
+  .price-sub {
+    color: hsl(204, 43%, 93%);
+    font-weight: 100;
+  }
+  .price-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.2em;
+  }
+  .price-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.btn {
+  padding: 1em;
+  border-radius: 0.5em;
+  border: none;
+  width: 80%;
+  align-self: center;
+  color: white;
+  background-color: hsl(71, 73%, 54%);
+  font-weight: bold;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+
+.box3 {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  grid-area: box3;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #4abebd;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    color: hsl(204, 43%, 93%);
+    font-weight: 100;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid-ctn {
+    max-width: 650px;
+    grid-template-areas:
+      "box1 box1"
+      "box2 box3";
+  }
+  .box1 {
+    padding: 3em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+  .box2 {
+    padding: 3em;
+    border-bottom-left-radius: 0.5em;
+  }
+  .box3 {
+    padding: 3em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0;
+  }
+}
